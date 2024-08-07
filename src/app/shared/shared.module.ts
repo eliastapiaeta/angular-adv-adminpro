@@ -6,7 +6,6 @@ import { RightSidebarComponent } from './sidebar/right-sidebar/right-sidebar.com
 import { LeftSidebarComponent } from './sidebar/left-sidebar/left-sidebar.component';
 
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
