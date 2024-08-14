@@ -18,6 +18,7 @@ import { PagesComponent } from './pages.component';
 import { BasicFormComponent } from './inputs/basic-form.component';
 import { FormValidationComponent } from './inputs/form-validation.component';
 import { FormInputsComponent } from './inputs/form-inputs.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { FormInputsComponent } from './inputs/form-inputs.component';
     BasicFormComponent,
     FormValidationComponent,
     FormInputsComponent,
+    AccountSettingsComponent,
   ],
   exports: [
     DashboardComponent,
@@ -37,6 +39,7 @@ import { FormInputsComponent } from './inputs/form-inputs.component';
     ProgressComponent,
     TableResponsiveComponent,
     PagesComponent,
+    AccountSettingsComponent,
   ],
   imports: [
     CommonModule,

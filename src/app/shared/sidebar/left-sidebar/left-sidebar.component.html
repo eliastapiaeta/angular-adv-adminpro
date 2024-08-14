@@ -4,25 +4,34 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav active">
             <ul id="sidebarnav" class="in">
-                <li class="user-profile"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="../assets/images/users/profile.png" alt="user"><span class="hide-menu">Steave Jobs </span></a>
+                <li class="user-profile">
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img
+                            src="../assets/images/users/profile.png" alt="user"><span class="hide-menu">Steave Jobs </span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="javascript:void()">My Profile </a></li>
                         <li><a href="javascript:void()">My Balance</a></li>
                         <li><a href="javascript:void()">Inbox</a></li>
-                        <li><a href="javascript:void()">Account Setting</a></li>
-                        <li><a href="javascript:void()">Logout</a></li>
+                        <li><a routerLink="account-settings">Account Setting</a></li>
+                        <li><a routerLink="/login">Logout</a></li>
                     </ul>
                 </li>
                 <li class="nav-devider"></li>
                 <li class="nav-small-cap">PERSONAL</li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-themecolor pull-right">4</span></span></a>
+
+                <li *ngFor="let item of menuItems">
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i class="mdi mdi-gauge"></i>
+                        <span class="hide-menu">{{item.titulo }}
+                            <span class="label label-rouded label-themecolor pull-right">{{item.submenu.length}}</span>
+                        </span>
+                    </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="#">Minimal </a></li>
-                        <li><a href="#">Analytical</a></li>
-                        <li><a href="#">Demographical</a></li>
-                        <li><a href="#">Modern</a></li>
+                        <li *ngFor="let submenu of item.submenu">
+                            <a [routerLink]="submenu.url">{{ submenu.titulo }}</a>
+                        </li>
                     </ul>
                 </li>
+
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Apps</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="#">Calendar</a></li>
@@ -40,27 +49,10 @@
                         <li><a href="#">Compose Mail</a></li>
                     </ul>
                 </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Ui Elements <span class="label label-rouded label-danger pull-right">25</span></span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="ui/progressbar">Progressbar</a></li>
-                    </ul>
-                </li>
                 <li class="nav-small-cap">FORMS, TABLE &amp; WIDGETS</li>
-                <li class="active"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Forms</span></a>
-                    <ul aria-expanded="true" class="collapse in">
-                        <li><a href="form/form-validation" class="active">Form Validation</a></li>
-                        <li><a href="form/form-basic">Basic Forms</a></li>
-                        <li><a href="form/form-inputs">Form inputs</a></li>
-                    </ul>
-                </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Tables</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="tables/table-responsive">Responsive Table</a></li>
-                    </ul>
-                </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-widgets"></i><span class="hide-menu">Widgets</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="dashboard/grafical">Charts Widgets</a></li>
                     </ul>
                 </li>
                 <li class="nav-small-cap">EXTRA COMPONENTS</li>

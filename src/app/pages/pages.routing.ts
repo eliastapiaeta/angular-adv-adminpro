@@ -8,6 +8,7 @@ import { TableResponsiveComponent } from './table-responsive/table-responsive.co
 import { BasicFormComponent } from './inputs/basic-form.component';
 import { FormValidationComponent } from './inputs/form-validation.component';
 import { FormInputsComponent } from './inputs/form-inputs.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 const routes: Routes = [
@@ -17,18 +18,20 @@ const routes: Routes = [
         children: [
             { path: '', component: DashboardComponent },
             { path: 'grafical', component: Grafica1Component },
+            { path: 'account-settings', component: AccountSettingsComponent },
+            { path: 'progressbar', component: ProgressComponent },
             // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         ]
     },
-    {
-        path: 'ui',
-        component: PagesComponent,
-        children: [
-            { path: '', component: TableResponsiveComponent },
-            { path: '', component: TableResponsiveComponent },
-            { path: 'progressbar', component: ProgressComponent },
-        ]
-    },
+    // {
+    //     path: 'ui',
+    //     component: PagesComponent,
+    //     children: [
+    //         { path: '', component: TableResponsiveComponent },
+    //         { path: '', component: TableResponsiveComponent },
+    //         { path: 'progressbar', component: ProgressComponent },
+    //     ]
+    // },
     {
         path: 'tables',
         component: PagesComponent,
